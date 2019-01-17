@@ -24,7 +24,7 @@ const P = styled.p`
 
 const Greet = styled(P)`
   margin-bottom: 30px;
-  font-size: 125%;
+  font-size: 180%;
 `;
 
 const Link = styled.a.attrs({ target: "_blank" })`
@@ -58,7 +58,8 @@ const App = () => (
       Hi, I'm <strong>Joaquín Moreira</strong>.
             </Greet>
     <P>
-      Computer Engineer, family man &
+      <strong>Computer Engineer</strong>
+      , family man &
       <br />
       amateur musician.
     </P>
