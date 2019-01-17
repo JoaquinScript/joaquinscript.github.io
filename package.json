@@ -1,19 +1,16 @@
 {
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build --no-source-maps src/index.html -d ./",
-    "prebuild": "rm -f index.html && rm -f src.*.js",
-    "deploy": "git add index.html src.*.js && git commit -m 'Update site'"
+    "build": "parcel build --no-source-maps --experimental-scope-hoisting src/index.html -d ./ --public-url ./",
+    "build:clean": "git rm --ignore-unmatch index.html src.*.js",
+    "predeploy": "yarn build:clean && yarn amend && yarn build",
+    "deploy": "git add index.html src.*.js && yarn amend",
+    "amend": "git commit --amend --no-edit"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn build && yarn deploy"
+      "pre-push": "yarn deploy"
     }
-  },
-  "gh-pages-deploy": {
-    "staticpath": "dist",
-    "commit": "Update site",
-    "noprompt": true
   },
   "dependencies": {
     "react": "^16.7.0",
