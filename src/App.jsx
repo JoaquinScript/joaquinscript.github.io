@@ -55,8 +55,11 @@ const Icons = styled.div`
 const App = () => (
   <Container>
     <Greet>
-      Hi, I'm <strong>Joaquín Moreira</strong>.
-            </Greet>
+      Hi, I'm 
+{' '}
+<strong>Joaquín Moreira</strong>
+.
+</Greet>
     <P>
       <strong>Computer Engineer</strong>
       , family man &
